@@ -12,8 +12,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/cart',[\App\Http\Controllers\CartController::class,'index'])->name('cart.index');
+Route::post('/cart/store',[CartController::class,'addToCart'])->name('cart.store');
 
 Route::get('/', function () {
-    return view('index');
-    Route::get('/cart',[\App\Http\Controllers\CartController::class,'index'])->name('cart.index');
+    return view('welcome');
 });
+
